@@ -19,14 +19,14 @@ import cn.aigestudio.datepicker.views.DatePicker;
  * @author AigeStudio 2015-06-12
  */
 public final class DPCManager {
-    private static final HashMap<Integer, HashMap<Integer, DPInfo[][]>> DATE_CACHE = new HashMap<>();
+    private static HashMap<Integer, HashMap<Integer, DPInfo[][]>> DATE_CACHE = new HashMap<>();
 
-    private static final HashMap<String, Set<String>> DECOR_CACHE_BG = new HashMap<>();
-    private static final HashMap<String, Set<String>> DECOR_CACHE_TL = new HashMap<>();
-    private static final HashMap<String, Set<String>> DECOR_CACHE_T = new HashMap<>();
-    private static final HashMap<String, Set<String>> DECOR_CACHE_TR = new HashMap<>();
-    private static final HashMap<String, Set<String>> DECOR_CACHE_L = new HashMap<>();
-    private static final HashMap<String, Set<String>> DECOR_CACHE_R = new HashMap<>();
+    private static HashMap<String, Set<String>> DECOR_CACHE_BG = new HashMap<>();
+    private static HashMap<String, Set<String>> DECOR_CACHE_TL = new HashMap<>();
+    private static HashMap<String, Set<String>> DECOR_CACHE_T = new HashMap<>();
+    private static HashMap<String, Set<String>> DECOR_CACHE_TR = new HashMap<>();
+    private static HashMap<String, Set<String>> DECOR_CACHE_L = new HashMap<>();
+    private static HashMap<String, Set<String>> DECOR_CACHE_R = new HashMap<>();
 
     private static DPCManager sManager;
 
@@ -220,5 +220,16 @@ public final class DPCManager {
             }
         }
         return info;
+    }
+
+    public static void clearCache() {
+        DATE_CACHE = new HashMap<>();
+
+        DECOR_CACHE_BG = new HashMap<>();
+        DECOR_CACHE_TL = new HashMap<>();
+        DECOR_CACHE_T = new HashMap<>();
+        DECOR_CACHE_TR = new HashMap<>();
+        DECOR_CACHE_L = new HashMap<>();
+        DECOR_CACHE_R = new HashMap<>();
     }
 }
